@@ -22,6 +22,11 @@ NOTE: download at least 2 different downloader scripts before using this manager
 - ztmexluis v1.2
 - Termux:Widget
 - (Run the script) jalankan skripnya.
+
+# Recomendation script downloader
+* AK500.sh (termux-url-opener)
+
+  or your options
   
 # Author
 @luisadha
