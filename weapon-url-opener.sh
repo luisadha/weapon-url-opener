@@ -1,3 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# weapon-url-opener v1.0
+# Created March 2024
+# by: luisadha
+
 while true; do
 cat << "EOF"
  _       __                                              __                                      
@@ -8,12 +13,12 @@ cat << "EOF"
                  /_/                                              /_/                           
 EOF
 
-echo -e $C " ╔════════════════════════════════════════════════╗"
-echo -e $G " )⇒ Project Name  :weapon-url-opener             ⇐("
-echo -e $G " )⇒ Author        :luisadha                      ⇐("       
-echo -e $G " )⇒ Github        :github.com/luisadha           ⇐("
-echo -e $G " )⇒ Telegram      :@adharudin14                  ⇐("        
-echo -e $C " ╚════════════════════════════════════════════════╝"
+echo -e  " ╔════════════════════════════════════════════════╗"
+echo -e  " )⇒ Project Name  :weapon-url-opener             ⇐("
+echo -e  " )⇒ Author        :luisadha                      ⇐("       
+echo -e  " )⇒ Github        :github.com/luisadha           ⇐("
+echo -e  " )⇒ Telegram      :@adharudin14                  ⇐("        
+echo -e  " ╚════════════════════════════════════════════════╝"
 echo -e " Tips: Use CTRL + C to safe exit!\n"
 test -f ~/bin/termux-url-opener
 if [ $? -eq 1 ]; then
