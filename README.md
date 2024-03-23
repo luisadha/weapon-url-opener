@@ -1,3 +1,5 @@
+#dynamic-condition-response #project
+
 # Dekripsi [ID]
 Beralih script downloader dengan mudah dan cepat. Sekarang fitur termux-url-opener lebih sering anda gunakan berkat skrip pengelola ini.
 
