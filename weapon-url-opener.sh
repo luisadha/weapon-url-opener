@@ -3,6 +3,8 @@
 # Created March 2024
 # by: luisadha
 
+# Algoritm: dynamic-condition-response using 'select do' and etc.
+
 while true; do
 cat << "EOF"
  _       __                                              __                                      
