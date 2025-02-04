@@ -32,9 +32,10 @@ Rules :
 
 * The name of the repository must be identical to the name of the script itself and must have a .sh extension.
 
-
-# Compability [EN/ID]
-- ztmexluis v1.2 (This project rename into ztme-toolbox)
+Congratulations your script to be read by ZTME-Toolbox
+  
+# Compability
+- ztmexluis v1.2 (This project moved into ztme-toolbox)
 - Termux:Widget
 - (Run the script) jalankan skripnya.
 
