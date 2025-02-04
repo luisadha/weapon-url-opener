@@ -23,15 +23,25 @@ curl -L https://raw.githubusercontent.com/luisadha/weapon-url-opener/refs/heads/
 ```sh
 termux-url-opener
 ```
+# For Developer 
+How to get your own script to run by the ztme-toolbox 
+
+Rules :
+
+* Make sure your shebang is set according to the script language used so as to avoid errors, Use the built-in termux tool "termux-fix-shebang"
+
+* The name of the repository must be identical to the name of the script itself and must have a .sh extension.
+
 
 # Compability [EN/ID]
-- ztmexluis v1.2
+- ztmexluis v1.2 (This project rename into ztme-toolbox)
 - Termux:Widget
 - (Run the script) jalankan skripnya.
 
 # Recomendation script downloader
 * AK500.sh (termux-url-opener)
-
+* ztme-toolbox
+  
   or your options
   
 # Author
