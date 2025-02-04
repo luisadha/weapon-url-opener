@@ -20,6 +20,12 @@ NOTE: download at least 2 different downloader scripts before using this manager
 2. Download and only place the downloader script in the ~/bin directory
 3. That's it! Run the script if you want to switch to a different downloader script.
 
+# Usage (2)
+```sh
+basher install luisadha/weapon-url-opener
+```
+
+
 # Compability [EN/ID]
 - ztmexluis v1.2
 - Termux:Widget
