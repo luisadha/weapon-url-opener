@@ -99,8 +99,8 @@ do
       break
       ;;
     *)
-    	echo "You selected $filename ($REPLY)"
-    echo
+    	 echo "You selected $filename ($REPLY)"
+      echo
       chmod +x ${filename}/${filename,,}.sh
       # termux-fix-shebang ${filename}/${filename,,}.sh
       ./${filename}/${filename,,}.sh
