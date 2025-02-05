@@ -184,7 +184,7 @@ echo -e "\nRun script as interactively from repository\nWiki bahasa : $a_href
 help translate you can send to mail: <adharudin14@gmail.com>"
 printf %"$(tput cols)"s | tr " " "-"
 
-select filename in ${files} "Add repository" "Fix issue if any" Exit;
+select filename in ${files} "Add repository (termux-url-opener)" "Fix issue if any" Exit;
 do
 [[ -n $filename ]] || { echo "$warn :What's that? Please try again." >&2; continue; }
 
@@ -201,7 +201,7 @@ do
      # sleep 0.5
       echo -n "...Done!"
       ;;
-    "Add repository")
+    "Add repository (termux-url-opener)")
       echo "$banner : Paste your repository link below :"
       read REPO_LINK
     
