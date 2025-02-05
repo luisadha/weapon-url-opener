@@ -149,6 +149,7 @@ while [[ $# -gt 0 ]]; do
             echo -e "You can make symboliclink again with \`weapon-url-opener\' or\n"
             echo -e "Procced full erases with \`basher uninstall luisadha/weapon-url-opener\'\n"
             echo -e ""
+            ;;            
         --wuo|--run-wuo)
             wuo
             shift 2
