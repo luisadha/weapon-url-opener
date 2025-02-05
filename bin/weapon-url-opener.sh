@@ -143,12 +143,14 @@ while [[ $# -gt 0 ]]; do
             rm -f ~/.local/bin/wuo.sh
             rm -f ~/.local/bin/wuo
             rm -f ~/bin/ztme-toolbox.sh
+            rm -f ~/.local/bin/wuo-uninstall.sh
             sleep 0.5
             echo -n "..All done";
             echo -e ""
             echo -e "You can make symboliclink again with \`weapon-url-opener\' or\n"
             echo -e "Procced full erases with \`basher uninstall luisadha/weapon-url-opener\'\n"
             echo -e ""
+            exit 0
             ;;            
         --wuo|--run-wuo)
             wuo
