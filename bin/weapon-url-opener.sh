@@ -11,7 +11,7 @@
 
 # ============================================================
 # Script Name  :  wuo.sh / weapon-url-opener.sh
-# Version      : 1.1f
+# Version      : 1.1g
 # Description  : Switch downloader scripts easily and quickly for termux-url-opener purpose.
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
@@ -30,6 +30,10 @@ succ='[success]'
 
 ME="ztme-toolbox"
 PS3="Your choice: "
+
+echo '#!/usr/bin/bash
+exec ~/bin/ztme-toolbox.sh --uninstall "$@"' > ~/.local/bin/wuo-uninstall.sh
+chmod +x ~/.local/bin/wuo-uninstall.sh
 
 echo '#!/usr/bin/bash
 exec ~/bin/ztme-toolbox.sh --run-wuo "$@"' > ~/.local/bin/wuo.sh
@@ -134,6 +138,17 @@ while [[ $# -gt 0 ]]; do
             clonePackage "$2"
             shift 2
             ;;
+        --uninstall)
+            echo "Cleaning symlink."
+            rm -f ~/.local/bin/wuo.sh
+            unlink  ~/.local/bin/wuo
+            rm -f ~/bin/ztme-toolbox.sh
+            sleep 0.5
+            echo -n "..All done";
+            echo -e ""
+            echo -e "You can make symboliclink again with \`weapon-url-opener\' or\n"
+            echo -e "Procced full erases with \`basher uninstall luisadha/weapon-url-opener\'\n"
+            echo -e ""
         --wuo|--run-wuo)
             wuo
             shift 2
