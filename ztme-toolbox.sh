@@ -3,7 +3,7 @@
 # ============================================================
 # Script Name  : ztme-toolbox.sh (Zero Tolerance for Major Errors)
 # Version      : 1.2.2
-# Description  : Manager collection script for bash
+# Description  : Interactive Manager Collection Script for bash
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
 # License      : Apache 2.0 License
