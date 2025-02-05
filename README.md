@@ -10,7 +10,7 @@ NOTE: download at least 2 different downloader scripts before using this manager
 2. Download and only place the downloader script in the ~/bin directory
 3. That's it! Run the script if you want to switch to a different downloader script.
 
-# Usage
+# Install
 ### Step (1) download with basher
 ```sh
 basher install luisadha/weapon-url-opener
@@ -21,10 +21,18 @@ basher install luisadha/weapon-url-opener
 curl -L https://raw.githubusercontent.com/luisadha/weapon-url-opener/refs/heads/master/ztme-toolbox.sh -o ~/bin/ztme-toolbox.sh
 ```
 -->
-### Step (2) Running the script.
+### Step (2) Running the setup for first time.
 ```sh
 termux-url-opener.sh
 ```
+
+# Uninstall
+
+```sh
+basher uninstall luisadha/weapon-url-opener
+```
+
+# 
 # For Developer 
 How to get your own script to run by the ztme-toolbox 
 
