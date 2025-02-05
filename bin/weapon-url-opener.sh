@@ -28,7 +28,7 @@ warn='[warning]'
 fail='[failure]'
 succ='[success]'
 
-#cd $PWD/script/interactive &>/dev/null;
+
 ME="ztme-toolbox"
 PS3="Your choice: "
 
@@ -36,6 +36,7 @@ echo '#!/usr/bin/bash
 exec ~/bin/ztme-toolbox.sh --run-wuo "$@"' > ~/.local/bin/wuo.sh
 chmod +x ~/.local/bin/wuo.sh
 ln -s ~/.local/bin/wuo.sh ~/.local/bin/wuo &>/dev/null;
+cp -f ~/.basher/cellar/bin/weapon-url-opener.sh ~/bin/ztme-toolbox.sh
 
 function clonePackage() {
  local args="$1"
