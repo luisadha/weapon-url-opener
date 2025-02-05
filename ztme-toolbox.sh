@@ -1,7 +1,27 @@
 #!/usr/bin/bash
 
-# Zero Tolerance for Major Errors (ZTME)-toolbox 1.2.2
-# (c) copyright 2025 by @Luis Adha
+# ============================================================
+# Script Name  : ztme-toolbox.sh (Zero Tolerance for Major Errors)
+# Version      : 1.2.2
+# Description  : -
+# Author       : Luis Adha (luisadha.my.id)
+# Created Date : 2025-Feb-05 (Wedn)
+# License      : 
+# GitHub       : https://github.com/luisadha/weapon-url-opener
+# ============================================================
+
+# ============================================================
+# Script Name  :  wuo.sh (Weapon Url Opener)
+# Version      : 1.1f
+# Description  : -
+# Author       : Luis Adha (luisadha.my.id)
+# Created Date : 2025-Feb-05 (Wedn)
+# License      : 
+# GitHub       : https://github.com/luisadha/weapon-url-opener
+# ============================================================
+
+
+
 
 banner='[ZTME-TOOLBOX]'
 warn='[warning]'
