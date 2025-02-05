@@ -141,7 +141,7 @@ while [[ $# -gt 0 ]]; do
         --uninstall)
             echo "Cleaning symlink."
             rm -f ~/.local/bin/wuo.sh
-            unlink  ~/.local/bin/wuo
+            rm -f ~/.local/bin/wuo
             rm -f ~/bin/ztme-toolbox.sh
             sleep 0.5
             echo -n "..All done";
