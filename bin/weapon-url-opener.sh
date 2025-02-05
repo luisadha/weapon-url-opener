@@ -1,5 +1,4 @@
 #!/usr/bin/bash
-
 # ============================================================
 # Script Name  : ztme-toolbox.sh (Zero Tolerance for Major Errors)
 # Version      : 1.2.2
@@ -89,8 +88,8 @@ echo -e  " )⇒ Telegram      :@adharudin14                  ⇐("
 echo -e  " ╚════════════════════════════════════════════════╝"
 echo -e " Tips: Use CTRL + C or CTRL + Z to safe exit!\n"
 #test -f ~/bin/termux-url-opener 
-ref_hash=$(md5sum termux-url-opener | awk '{print $1}'); match="";
-for file in $PWD/*.sh; do
+ref_hash=$(md5sum ~/bin/termux-url-opener | awk '{print $1}'); match="";
+for file in ~/bin/*.sh; do
     file_hash=$(md5sum "$file" | awk '{print $1}')
 
     if [ "$ref_hash" = "$file_hash" ]; then
