@@ -6,7 +6,7 @@
 # Description  : -
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
-# License      : 
+# License      : Apache 2.0 License
 # GitHub       : https://github.com/luisadha/weapon-url-opener
 # ============================================================
 
@@ -16,7 +16,7 @@
 # Description  : -
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
-# License      : 
+# License      : MIT
 # GitHub       : https://github.com/luisadha/weapon-url-opener
 # ============================================================
 
