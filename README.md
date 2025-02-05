@@ -23,7 +23,7 @@ curl -L https://raw.githubusercontent.com/luisadha/weapon-url-opener/refs/heads/
 -->
 ### Step (2) Running the script.
 ```sh
-termux-url-opener
+termux-url-opener.sh
 ```
 # For Developer 
 How to get your own script to run by the ztme-toolbox 
