@@ -15,11 +15,13 @@ NOTE: download at least 2 different downloader scripts before using this manager
 ```sh
 basher install luisadha/weapon-url-opener
 ```
+<!--
 ### Step (2) copy this code
 ```sh
 curl -L https://raw.githubusercontent.com/luisadha/weapon-url-opener/refs/heads/master/ztme-toolbox.sh -o ~/bin/ztme-toolbox.sh
 ```
-### Step (3) Running the script.
+-->
+### Step (2) Running the script.
 ```sh
 termux-url-opener
 ```
