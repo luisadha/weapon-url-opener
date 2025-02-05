@@ -3,7 +3,7 @@
 # ============================================================
 # Script Name  : ztme-toolbox.sh (Zero Tolerance for Major Errors)
 # Version      : 1.2.2
-# Description  : -
+# Description  : Manager collection script for bash
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
 # License      : Apache 2.0 License
@@ -11,9 +11,9 @@
 # ============================================================
 
 # ============================================================
-# Script Name  :  wuo.sh (Weapon Url Opener)
+# Script Name  :  wuo.sh / weapon-url-opener.sh
 # Version      : 1.1f
-# Description  : -
+# Description  : Switch downloader scripts easily and quickly for termux-url-opener purpose.
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
 # License      : MIT
