@@ -81,7 +81,7 @@ cat << "EOF"
 EOF
 
 echo -e  " ╔════════════════════════════════════════════════╗"
-echo -e  " )⇒ Project Name  :weapon-url-opener x ztme            ⇐("
+echo -e  " )⇒ Project Name  :weapon-url-opener x ztme      ⇐("
 echo -e  " )⇒ Author        :luisadha                      ⇐("  
 echo -e  " )⇒ Github        :github.com/luisadha           ⇐("
 echo -e  " )⇒ Telegram      :@adharudin14                  ⇐("  
