@@ -3,7 +3,7 @@ name: Sync index.html
 on:
   push:
     branches:
-      - main  # Sesuaikan dengan branch utama repo kamu
+      - master
 
 jobs:
   sync:
@@ -16,6 +16,9 @@ jobs:
         run: |
           mkdir -p bin/weapon-url-opener
           cp index.html bin/weapon-url-opener/
+
+      - name: Debug - Check Git Status
+        run: git status
 
       - name: Commit changes
         run: |
