@@ -23,6 +23,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add bin/weapon-url-opener/index.html
+          git add bin/weapon-url-opener
           git commit -m "Sync index.html to bin/weapon-url-opener" || echo "No changes to commit"
           git push
