@@ -224,7 +224,7 @@ else
     read -p "Do you want to enable it? (Y/n): " enableIt
       
       if [[ "$enableIt" == "Y" ]] || [[ "$enableIt" == "y" ]]; then
-           cp -f "$0" "$HOME/bin/ztme-toolbox.sh"; wuo
+           cp -f "$0" "$HOME/bin/ztme-toolbox.sh"; chmod +x "$HOME/bin/ztme-toolbox.sh"; wuo
       fi
 fi
       echo "$banner : Paste your repository link below :"
