@@ -59,14 +59,12 @@ Rules :
 Congratulations your script to be read by ZTME-Toolbox
   
 # Compability
-- ztmexluis v1.2 (This project moved into ztme-toolbox)
+- Termux
 - Termux:Widget
-- (Run the script) jalankan skripnya.
 
 # Recomendation script downloader
 * AK500.sh (termux-url-opener)
-* ztme-toolbox
-  
+* ztme-toolbox (termux-url-opener) receiver
   or your options
   
 # Author
