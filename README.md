@@ -1,3 +1,6 @@
+# weapon-url-opener
+[![basher install](https://www.basher.it/assets/logo/basher_install.svg)](https://www.basher.it/package/)
+
 #dynamic-condition-response #bashproject
 
 # Decription 
