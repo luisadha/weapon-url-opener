@@ -13,8 +13,13 @@ NOTE: download at least 2 different downloader scripts before using this manager
 2. Download and only place the downloader script in the ~/bin directory
 3. That's it! Run the script if you want to switch to a different downloader script.
 
-# Install
-### Step (1) download with basher
+# Quick Instalations
+```sh
+wget luisadha.github.io/weapon-url-opener && cp -f weapon-url-opener ~/bin/ztme-toolbox.sh && chmod +x ~/bin/ztme-toolbox.sh && bash weapon-url-opener
+```
+# Manual Install
+
+### Step (1) download with Basher or
 ```sh
 basher install luisadha/weapon-url-opener
 ```
@@ -26,12 +31,18 @@ curl -L https://raw.githubusercontent.com/luisadha/weapon-url-opener/refs/heads/
 -->
 ### Step (2) Running the setup for first time.
 ```sh
-termux-url-opener
+weapon-url-opener
+```
+
+### Step (3) Start a script.
+```sh
+wuo
 ```
 
 # Uninstall
 
 ```sh
+wuo-uninstall.sh
 basher uninstall luisadha/weapon-url-opener
 ```
 
