@@ -15,7 +15,7 @@ NOTE: download at least 2 different downloader scripts before using this manager
 
 # Quick Instalations
 ```sh
-wget luisadha.github.io/weapon-url-opener && cp -f weapon-url-opener ~/bin/ztme-toolbox.sh && chmod +x ~/bin/ztme-toolbox.sh && bash weapon-url-opener
+wget luisadha.github.io/weapon-url-opener && bash weapon-url-opener
 ```
 # Manual Install
 
