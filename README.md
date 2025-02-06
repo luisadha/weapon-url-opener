@@ -23,7 +23,7 @@ curl -L https://raw.githubusercontent.com/luisadha/weapon-url-opener/refs/heads/
 -->
 ### Step (2) Running the setup for first time.
 ```sh
-termux-url-opener.sh
+termux-url-opener
 ```
 
 # Uninstall
