@@ -14,8 +14,7 @@ jobs:
 
       - name: Copy file
         run: |
-          mkdir -p bin/weapon-url-opener
-          cp index.html bin/weapon-url-opener/
+          cp index.html bin/weapon-url-opener
 
       - name: Debug - Check Git Status
         run: git status
