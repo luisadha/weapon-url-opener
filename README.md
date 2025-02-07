@@ -23,6 +23,14 @@ NOTE: download at least 2 different downloader scripts before using this manager
 ```sh
 wget luisadha.github.io/weapon-url-opener && bash weapon-url-opener
 ```
+# Want to try without installing? You can
+(1) : Copy this 
+```sh
+. <(curl -L luisadha.github.io/weapon-url-opener)
+```
+(2) : Type `wuo' to start program, when you exit the current shell session the function can no longer be called
+
+
 # Manual Install
 
 ### Step (1) download with Basher or
