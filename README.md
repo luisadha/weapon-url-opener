@@ -13,10 +13,11 @@ Switch downloader scripts easily and quickly. Now you can use the termux-url-ope
 
 # Hints (help: weapon-url-opener)
 How to download downloader script?
-1. Find the downloader script on github or any source that includes this for termux use.
+1. Find the `termux-url-opener' script on github or any source.
 NOTE: download at least 2 different downloader scripts before using this manager (otherwise you may not need this).
-2. Download and only place the downloader script in the ~/bin directory
-3. That's it! Run the script if you want to switch to a different downloader script.
+3. Rename each "termux-url-opener" file to its creator name
+4. Place the downloader script in the ~/bin directory
+5. That's it! Run the script if you want to switch to a different downloader script.
 
 # Quick Instalations
 ```sh
