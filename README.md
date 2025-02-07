@@ -5,9 +5,13 @@
 #dynamic-condition-response #bashproject
 
 # Decription 
-Switch downloader scripts easily and quickly. Now you can use the termux-url-opener feature more often thanks to this manager script.
+Switch downloader scripts easily and quickly. Now you can use the termux-url-opener feature more often.
 
-# Hints
+# Features
+* ztme-toolbox [activity] (Run scripts directly through cloned repos)
+* ztme-toolbox [receiver] (As termux-url-opener script to clone repository via Android share)
+
+# Hints (help: weapon-url-opener)
 How to download downloader script?
 1. Find the downloader script on github or any source that includes this for termux use.
 NOTE: download at least 2 different downloader scripts before using this manager (otherwise you may not need this).
@@ -47,8 +51,8 @@ wuo-uninstall.sh
 basher uninstall luisadha/weapon-url-opener
 ```
 
-# 
-# For Developer 
+
+# For Developer (help: ztme-toolbox)
 How to get your own script to run by the ztme-toolbox 
 
 Rules :
@@ -61,12 +65,10 @@ Congratulations your script to be read by ZTME-Toolbox
   
 # Compability
 - Termux
-- Termux:Widget
 
 # Recomendation script downloader
-* AK500.sh (termux-url-opener)
-* ztme-toolbox (termux-url-opener) receiver
-  or your options
+* AK500.sh (termux-url-opener) to download audio/video from YouTube via Android shared
+* ztme-toolbox (termux-url-opener) to clone github repository via Android shared
   
 # Author
 
