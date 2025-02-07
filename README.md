@@ -1,5 +1,6 @@
 # weapon-url-opener
 [![basher install](https://www.basher.it/assets/logo/basher_install.svg)](https://www.basher.it/package/)
+<a href="#"><img title="repo size" src="https://img.shields.io/github/repo-size/luisadha/weapon-url-opener?style=flat-square"></a>
 
 #dynamic-condition-response #bashproject
 
