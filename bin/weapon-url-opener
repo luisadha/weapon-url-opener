@@ -7,7 +7,7 @@
 # in the calling context.
 # ============================================================
 # Script Name  : ztme-toolbox.sh (Zero Tolerance for Major Errors)
-# Version      : 1.3.2
+# Version      : 1.3.3
 # Description  : Interactive Manager Collection Script for bash
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
@@ -229,8 +229,10 @@ do
 if [[ "$plugin_enabled" == "true" ]]; then
     echo "Plugin is running, try sharing the repository URL you want to clone via the Android Shared."
 else
-    echo "$warn : The plugin is not active yet, but don't worry, you can still use this alternative feature."
-    read -r -p "Do you want to enable it? (Y/n): " enableIt
+   echo -e "Warning: It seems that the file named \`ztme-Toolbox' is not in the folder ~/bin";
+   echo -e "Synchronize with Termux-URL-Opener? (Y)";
+   echo -e "Warning: You can't use this feature if you don't install the Script in full. You can ignore this warning, (n) Continue as it is";
+   read -r -p "Confirm (Y/n): " enableIt
       
       if [[ "$enableIt" == "Y" ]] || [[ "$enableIt" == "y" ]]; then
            cp -f "$0" "$HOME/bin/ztme-toolbox.sh"; chmod +x "$HOME/bin/ztme-toolbox.sh"; wuo
