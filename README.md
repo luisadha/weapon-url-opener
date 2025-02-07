@@ -64,8 +64,9 @@ Rules :
 
 Congratulations your script to be read by ZTME-Toolbox
   
-# Compability
-- Termux
+# Prerequisite
+- Termux:API
+- Minimun two downloader script
 
 # Recomendation script downloader
 * AK500.sh (termux-url-opener) to download audio/video from YouTube via Android shared
