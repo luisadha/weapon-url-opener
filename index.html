@@ -54,8 +54,7 @@ exec ~/bin/ztme-toolbox.sh --run-wuo "$@"' > ~/.local/bin/wuo.sh
 chmod +x ~/.local/bin/wuo.sh
 [ -e "$HOME/.local/bin/wuo" ] || ln -sf ~/.local/bin/wuo.sh ~/.local/bin/wuo &>/dev/null;
 cp -f ~/.basher/cellar/bin/weapon-url-opener.sh ~/bin/ztme-toolbox.sh 2>/dev/null;
-cp -f "$0" ~/bin/ztme-toolbox.sh 2>/dev/null;
-chmod +x ~/bin/ztme-toolbox.sh 2>/dev/null;
+# cp -f "$0" ~/bin/ztme-toolbox.sh 2>/dev/null; chmod +x ~/bin/ztme-toolbox.sh 2>/dev/null;
 clonePackage() {
 # local args="$1"
        if timeout 10s ping -c 1 google.com &> /dev/null; then
@@ -207,7 +206,7 @@ echo -e "\nRun script as interactively from repository\nInfo : $a_href
 Author: <adharudin14@gmail.com>"
 printf %"$(tput cols)"s | tr " " "-"
 
-select filename in ${files} "Add repository (termux-url-opener status)" "Fix issue if any" Exit;
+select filename in ${files} "Add repository (weapon-url-opener status)" "Fix issue if any" Exit;
 do
 [[ -n $filename ]] || { echo "$warn :What's that? Please try again." >&2; continue; }
 
@@ -226,7 +225,7 @@ do
      # sleep 0.5
       echo -n "...Done!"
       ;;
-    "Add repository (termux-url-opener status)")
+    "Add repository (weapon-url-opener status)")
  
 if [[ "$plugin_enabled" == "true" ]]; then
     echo "Info: Scripts have been synchronized with termux-url-opener, try sharing the repository URL you want to clone via the Android Shared.";
