@@ -7,7 +7,7 @@
 # in the calling context.
 # ============================================================
 # Script Name  : ztme-toolbox.sh (Zero Tolerance for Major Errors)
-# Version      : 1.3.3
+# Version      : 1.3.4
 # Description  : Interactive Manager Collection Script for bash
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
@@ -199,12 +199,12 @@ sleep 0.8 && clear
 printf %"$(tput cols)"s | tr " " "-"
 #echo "-------------------------------------------"
 echo " Zero Tolerance for Major Errors - Toolbox x wuo"
-echo " version : v1.3.2"
+echo " version : v1.3.4"
 #echo "-------------------------------------------"
 printf %"$(tput cols)"s | tr " " "-"
 echo -e "$warn : First time instalations? Type \`CTRL + C' or using options that lead you out ";
 echo -e "\nRun script as interactively from repository\nInfo : $a_href
-help translate you can send to mail: <adharudin14@gmail.com>"
+Author: <adharudin14@gmail.com>"
 printf %"$(tput cols)"s | tr " " "-"
 
 select filename in ${files} "Add repository (termux-url-opener status)" "Fix issue if any" Exit;
@@ -231,8 +231,9 @@ do
 if [[ "$plugin_enabled" == "true" ]]; then
     echo "Info: Scripts have been synchronized with termux-url-opener, try sharing the repository URL you want to clone via the Android Shared.";
 else
-   echo -e "Warning: It seems that the file named \`ztme-Toolbox' is not in the folder ~/bin\n";
-   echo -e "Synchronize with Termux-URL-Opener? (Y) \n";
+   [[ ! -f ~/bin/ztme-toolbox.sh ]] && echo -e "Warning: It seems that the file named \`ztme-Toolbox' is not in the folder ~/bin\n";
+
+   echo -e "Do you want synchronize with Termux-URL-Opener? (Y) \n";
    echo -e "Warning: You can't use this feature if you don't install the Script in full. You can ignore this warning, (n) Continue as it is \n";
    read -r -p "Confirm (Y/n): " enableIt
       
