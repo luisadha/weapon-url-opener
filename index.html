@@ -74,13 +74,13 @@ clonePackage() {
            exit 2
         fi
 }
-function findMatch() {
+findMatch() {
   find . -maxdepth 1 -type d -exec sh -c 'for d; do [ -f "$d/${d##*/}.sh" ] && basename "$d/${d##*/}.sh" .sh; done' _ {} +
 }
-function findMatchRecursif() {
+findMatchRecursif() {
   find . -type d -exec sh -c 'for d; do [ -f "$d/${d##*/}.sh" ] && basename "$d/${d##*/}.sh" ".sh"; done' _ {} +
 }
-function wuo() {
+wuo() {
 #!/data/data/com.termux/files/usr/bin/bash
 # weapon-url-opener v1.0
 # Created March 2024
