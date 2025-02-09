@@ -143,8 +143,6 @@ for file in ~/bin/*.sh; do
      [[ "$match" == "true" ]] && echo " IN USE: $toggle"
  done
 
-[[ "$user_agent" == "curl" ]] && echo -e "\nPlease install the entire package.\n"; exit 126 || :
-
 #file_list=($(ls -Art ~/bin/*.sh))
 #file_list=( $(for file in "${file_list[@]}"; do basename "$file"; done) )
 
@@ -257,7 +255,13 @@ else
    read -r -p "Confirm (Y/n): " enableIt
       
       if [[ "$enableIt" == "Y" ]] || [[ "$enableIt" == "y" ]]; then
-           cp -f "$0" "$HOME/bin/ztme-toolbox.sh"; chmod +x "$HOME/bin/ztme-toolbox.sh"; wuo
+         if [[ "$user_agent" == "curl" ]]; then
+						echo -e "\nPlease install the entire package.\n";
+						exit 126
+				 fi
+          	 cp -f "$0" "$HOME/bin/ztme-toolbox.sh";
+						 chmod +x "$HOME/bin/ztme-toolbox.sh"; 
+						 wuo
       fi
 fi
     echo
