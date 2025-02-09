@@ -163,7 +163,7 @@ IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs
  if [[ "$weapon" == "EXIT" ]]; then
       echo "Exiting the program"
       rm -f .weapon-url-opener.status
-      return 0
+      break
     else
       echo "You selected $(basename "$weapon") as primary weapon"
       sleep 1
