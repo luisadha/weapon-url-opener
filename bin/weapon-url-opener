@@ -187,6 +187,7 @@ while [[ $# -gt 0 ]]; do
             rm -f ~/.tmp/ztme-toolbox.sh
             rm -f ~/.local/bin/wuo-uninstall.sh
 						rm -f ${BIN}/ztme-toolbox
+            rm -f ~/bin/ztme-toolbox.sh
             sleep 0.5
             echo -n "..All done";
             echo -e ""
