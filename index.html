@@ -25,6 +25,13 @@
 # GitHub       : https://github.com/luisadha/weapon-url-opener
 # ============================================================
 #set -xv
+
+if [[ "${BASH_SOURCE[0]}" == "/dev/fd/"* ]]; then
+    echo "Anda menjalankan dengan curl"
+else
+    echo "Anda menjalankan secara langsung"
+fi
+   
 banner='[ZTME-TOOLBOX]'
 warn='[warning]'
 fail='[failure]'
