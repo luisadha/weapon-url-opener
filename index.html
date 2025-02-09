@@ -35,7 +35,7 @@ run_with_curl=false
     fi
 
       
-if [[ ${BASH_SOURCE[0]} != "$0" ]]; then
+if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
     echo "Error: Jangan gunakan 'source skript.sh' atau '. skript.sh'"
     echo "Gunakan 'bash skript.sh' atau tambahkan ke PATH"
     return 1 2>/dev/null || exit 1
