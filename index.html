@@ -72,7 +72,9 @@ exec ~/bin/ztme-toolbox.sh --run-wuo "$@"' > ~/.local/bin/wuo.sh
 chmod +x ~/.local/bin/wuo.sh
 [ -e "$HOME/.local/bin/wuo" ] || ln -sf ~/.local/bin/wuo.sh ~/.local/bin/wuo &>/dev/null;
 cp -f ~/.basher/cellar/bin/weapon-url-opener.sh ~/bin/ztme-toolbox.sh 2>/dev/null;
-# cp -f "$0" ~/bin/ztme-toolbox.sh 2>/dev/null; chmod +x ~/bin/ztme-toolbox.sh 2>/dev/null;
+
+cp -f "$0" ${PREFIX:-/usr/local}/bin/weapon-url-opener 2>/dev/null; chmod +x ${PREFIX:-/usr/local}/bin/weapon-url-opener 2>/dev/null;
+
 clonePackage() {
 # local args="$1"
        if timeout 10s ping -c 1 google.com &> /dev/null; then
