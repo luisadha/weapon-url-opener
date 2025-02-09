@@ -147,7 +147,7 @@ echo
 #file_list=($(ls -Art ~/bin/*.sh))
 #file_list=( $(for file in "${file_list[@]}"; do basename "$file"; done) )
 
-IFS=$'\n' read -d '' -r -a file_list < <(ls -Art ~/bin/*.sh)
+IFS=$'\n' read -d '' -r -a file_list < <(\ls -Art ~/bin/*.sh)
 IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs -n1 basename)
 
 
@@ -159,7 +159,7 @@ IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs
  if [[ "$weapon" == "EXIT" ]]; then
       echo "Exiting the program"
       rm -f .weapon-url-opener.status
-      exit 1
+      return 0
     else
       echo "You selected $(basename "$weapon") as primary weapon"
       sleep 1
