@@ -7,7 +7,7 @@
 # in the calling context.
 # ============================================================
 # Script Name  : ztme-toolbox.sh (Zero Tolerance for Major Errors)
-# Version      : 1.3.4
+# Version      : 1.3.5
 # Description  : Interactive Manager Collection Script for bash
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
@@ -17,7 +17,7 @@
 
 # ============================================================
 # Script Name  :  wuo.sh / weapon-url-opener.sh
-# Version      : 1.3
+# Version      : 1.4
 # Description  : Switch downloader scripts easily and quickly for termux-url-opener purpose.
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
@@ -28,6 +28,9 @@
 user_agent=$_
 run_with_curl=false
 SCRIPT_NAME=${BASH_SOURCE[0]##*/}
+version_ztme="1.3.5"
+version_wuo="1.4"
+version_both="1.3.5(1.4)"
 banner='[ZTME-TOOLBOX]'
 warn='[warning]'
 fail='[failure]'
@@ -121,7 +124,7 @@ echo -e  " )⇒ Telegram      :@adharudin14                  ⇐("
 echo -e  " ╚════════════════════════════════════════════════╝"
 echo -e " Tips: Use CTRL + C or CTRL + Z to safe exit!\n"
 #test -f ~/bin/termux-url-opener 
-
+echo -e " Version: v$version_wuo"
 ref_hash=$(md5sum ~/bin/termux-url-opener | awk '{print $1}'); match="";
 for file in ~/bin/*.sh; do
     file_hash=$(md5sum "$file" | awk '{print $1}')
@@ -212,12 +215,12 @@ echo "Preparing..." && findMatch &>/dev/null
 sleep 0.8 && clear
 printf %"$(tput cols)"s | tr " " "-"
 #echo "-------------------------------------------"
-echo " Zero Tolerance for Major Errors - Toolbox x wuo"
-echo " version : v1.3.4"
+echo " ZTME-Toolbox x Weapon Url Opener (v$version_both)
+echo " Run script as interactively from repository.
 #echo "-------------------------------------------"
 printf %"$(tput cols)"s | tr " " "-"
 echo -e "User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')"
-echo -e "\nRun script as interactively from repository\nInfo : $a_href
+echo -e "Info : $a_href
 Author: <adharudin14@gmail.com>"
 printf %"$(tput cols)"s | tr " " "-"
 
