@@ -25,32 +25,27 @@
 # GitHub       : https://github.com/luisadha/weapon-url-opener
 # ============================================================
 #set -xv
+
 run_with_curl=false
-# Ambil perintah terakhir sebelum `history` sendiri
-# last_cmd=$(history 2 | head -n 1 | awk '{$1=""; print $0}' | sed 's/^ //')
-
-    if [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
-        #echo "Skrip dijalankan via source <(curl ...)"
-        run_with_curl=true
-    fi
-
-      
-if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
-    echo "Error: Jangan gunakan 'source skript.sh' atau '. skript.sh'"
-    echo "Gunakan 'bash skript.sh' atau tambahkan ke PATH"
-    return 1 2>/dev/null || exit 1
-fi
-
-echo "Skrip berjalan dengan benar!"     
-   
+SCRIPT_NAME=${BASH_SOURCE[0]##*/}
 banner='[ZTME-TOOLBOX]'
 warn='[warning]'
 fail='[failure]'
 succ='[success]'
-#ME="ztme-toolbox"
-touch ~/bin/termux-url-opener 2>/dev/null;
 a_href="https://github.com/luisadha/weapon-url-opener/blob/master/README.md"
 PS3="Your choice: "
+
+if [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
+        #echo "Skrip dijalankan via source <(curl ...)"
+        run_with_curl=true
+fi
+if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
+    echo -e "Error: Don't use 'source ${SCRIPT_NAME}' or '. ${SCRIPT_NAME}'"
+    echo "Use 'bash ${SCRIPT_NAME}' or install to PATH"
+    return 1 2>/dev/null || exit 1
+fi
+
+touch ~/bin/termux-url-opener 2>/dev/null;
 SELFMD5="$(md5sum "$0" | cut -d' ' -f1)"
 TARGETMD5="$(md5sum "$HOME/bin/termux-url-opener" | cut -d' ' -f1)"
 plugin_enabled=''
@@ -61,7 +56,6 @@ else
     plugin_enabled=false
    # echo "MD5 berbeda!"
 fi
-
 
 echo '#!/usr/bin/bash
 exec ~/bin/ztme-toolbox.sh --uninstall "$@"' > ~/.local/bin/wuo-uninstall.sh
