@@ -25,7 +25,7 @@
 # GitHub       : https://github.com/luisadha/weapon-url-opener
 # ============================================================
 #set -xv
-
+user_agent=$_
 run_with_curl=false
 SCRIPT_NAME=${BASH_SOURCE[0]##*/}
 banner='[ZTME-TOOLBOX]'
@@ -38,9 +38,12 @@ PS3="Your choice: "
 if [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
         #echo "Skrip dijalankan via source <(curl ...)"
         run_with_curl=true
+        user_agent='curl'
 fi
 if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
-    echo -e "Error: Don't use 'source ${SCRIPT_NAME}' or '. ${SCRIPT_NAME}'"
+       user_agent='source'
+       echo -e "User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')"
+    echo -e "\nError: Don't use 'source ${SCRIPT_NAME}' or '. ${SCRIPT_NAME}'"
     echo "Use 'bash ${SCRIPT_NAME}' or install to PATH"
     return 1 2>/dev/null || exit 1
 fi
@@ -213,7 +216,7 @@ echo " Zero Tolerance for Major Errors - Toolbox x wuo"
 echo " version : v1.3.4"
 #echo "-------------------------------------------"
 printf %"$(tput cols)"s | tr " " "-"
-echo -e "$warn : First time instalations? Type \`CTRL + C' or using options that lead you out ";
+echo -e "User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')"
 echo -e "\nRun script as interactively from repository\nInfo : $a_href
 Author: <adharudin14@gmail.com>"
 printf %"$(tput cols)"s | tr " " "-"
