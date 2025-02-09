@@ -53,7 +53,7 @@ if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
 fi
 
 touch ~/bin/termux-url-opener 2>/dev/null;
-SELFMD5="$(md5sum "$0" | cut -d' ' -f1)"
+SELFMD5="$(md5sum  ~/bin/ztme-toolbox.sh | cut -d' ' -f1)"
 TARGETMD5="$(md5sum "$HOME/bin/termux-url-opener" | cut -d' ' -f1)"
 plugin_enabled=''
 if [ "$SELFMD5" = "$TARGETMD5" ]; then
