@@ -6,7 +6,7 @@
   "license": "MIT",
   "install": "bpkg run install",
   "commands": {
-    "install": "mkdir -p ${PREFIX:-/usr/local}/{bin,share/man/man1} && cp index.html ${PREFIX:-/usr/local}/bin/weapon-url-opener && cp weapon-url-opener.1 ${PREFIX:-/usr/local}/share/man/man1 && echo \"The installation was completed.\"",        
+    "install": "mkdir -p ${PREFIX:-/usr/local}/{bin,share/man/man1} && cp index.html ${PREFIX:-/usr/local}/bin/weapon-url-opener && chmod +x ${PREFIX:-/usr/local}/bin/weapon-url-opener && cp weapon-url-opener.1 ${PREFIX:-/usr/local}/share/man/man1 && echo \"The installation was completed.\"",        
     "lint": "shellcheck **/*.sh"
   }
 }
