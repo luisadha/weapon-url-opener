@@ -27,15 +27,17 @@
 #set -xv
 
 # Ambil perintah terakhir sebelum `history` sendiri
-last_cmd=$(history 2 | head -n 1 | awk '{$1=""; print $0}' | sed 's/^ //')
+# last_cmd=$(history 2 | head -n 1 | awk '{$1=""; print $0}' | sed 's/^ //')
 
 # Periksa apakah perintah terakhir mengandung `curl`
-if [[ "$_" == "$last_cmd" ]]; then
+if [[ "$_" == *"/proc/self/fd/"* ]]; then
     echo "Anda menjalankan dengan curl"
     run_with_curl=true
+    return 0
 else
     echo "Anda menjalankan secara langsung"
     run_with_curl=false
+    return 1
 fi
    
 banner='[ZTME-TOOLBOX]'
