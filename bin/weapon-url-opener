@@ -215,8 +215,8 @@ echo "Preparing..." && findMatch &>/dev/null
 sleep 0.8 && clear
 printf %"$(tput cols)"s | tr " " "-"
 #echo "-------------------------------------------"
-echo " ZTME-Toolbox x Weapon Url Opener (v$version_both)
-echo " Run script as interactively from repository.
+echo "ZTME-Toolbox x Weapon Url Opener v$version_both"
+echo "Run script as interactively from repository.
 #echo "-------------------------------------------"
 printf %"$(tput cols)"s | tr " " "-"
 echo -e "User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')"
