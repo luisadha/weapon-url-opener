@@ -143,7 +143,7 @@ for file in ~/bin/*.sh; do
      [[ "$match" == "true" ]] && echo " IN USE: $toggle"
  done
 
-[[ "$user_agent" == "curl" ]] && echo -e "\nPlease install the entire package.\n"; return 126
+[[ "$user_agent" == "curl" ]] && echo -e "\nPlease install the entire package.\n"; exit 126
 
 #file_list=($(ls -Art ~/bin/*.sh))
 #file_list=( $(for file in "${file_list[@]}"; do basename "$file"; done) )
