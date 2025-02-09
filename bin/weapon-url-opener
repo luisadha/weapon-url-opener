@@ -252,11 +252,11 @@ do
     "Add repository (weapon-url-opener status)")
  
 if [[ "$plugin_enabled" == "true" ]]; then
-    echo "Info: Scripts have been synchronized with termux-url-opener, try sharing the repository URL you want to clone via the Android Shared.";
+    echo "Info: Feature have been applied with termux-url-opener, try sharing the repository URL you want to clone via the Android Shared.";
 else
    [[ ! -f ~/bin/ztme-toolbox.sh ]] && echo -e "Warning: It seems that the file named \`ztme-Toolbox' is not in the folder ~/bin\n";
 
-   echo -e "Do you want synchronize with Termux-URL-Opener? (Y) \n";
+   echo -e "Do you want apply this feature into Termux-URL-Opener? (Y) \n";
   [[ "$run_with_curl" == "true" ]] && echo -e "Warning: You can't use this feature if you don't install the Script in full. You can ignore this warning, (n) Continue as it is \n" 
 
    read -r -p "Confirm (Y/n): " enableIt
