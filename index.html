@@ -75,7 +75,7 @@ chmod +x ~/.local/bin/wuo.sh
 [ -e "$HOME/.local/bin/wuo" ] || ln -sf ~/.local/bin/wuo.sh ~/.local/bin/wuo &>/dev/null;
 cp -f ~/.basher/cellar/bin/weapon-url-opener.sh ~/.tmp/ztme-toolbox.sh 2>/dev/null;
 
-cp -f "$0" ${PREFIX:-/usr/local}/bin/weapon-url-opener 2>/dev/null; chmod +x ${PREFIX:-/usr/local}/bin/weapon-url-opener 2>/dev/null;
+#cp -f "$0" ${PREFIX:-/usr/local}/bin/weapon-url-opener 2>/dev/null; chmod +x ${PREFIX:-/usr/local}/bin/weapon-url-opener 2>/dev/null;
 
 clonePackage() {
 # local args="$1"
@@ -269,6 +269,8 @@ else
 ztme-toolbox --add-repo "$@"' > ~/bin/ztme-toolbox.sh
           	 cp -f "$0" "${BIN}/ztme-toolbox";
 						 chmod +x "${BIN}/ztme-toolbox"; 
+             cp -f "${BIN}/ztme-toolbox" "${HOME}/.tmp/ztme-toolbox.sh 2>/dev/null;
+             chmod +x ${HOME}/.tmp/ztme-toolbox.sh 2>/dev/null;
 						 wuo
       fi
 fi
