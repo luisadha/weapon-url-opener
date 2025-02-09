@@ -28,6 +28,7 @@
 user_agent=$_
 run_with_curl=false
 SCRIPT_NAME=${BASH_SOURCE[0]##*/}
+BIN="${PREFIX}/bin"
 version_ztme="1.3.5"
 version_wuo="1.4"
 version_both="1.3.5(1.4)"
@@ -62,16 +63,17 @@ else
     plugin_enabled=false
    # echo "MD5 berbeda!"
 fi
+mkdir -p ~/.tmp
 
 echo '#!/usr/bin/bash
-exec ~/bin/ztme-toolbox.sh --uninstall "$@"' > ~/.local/bin/wuo-uninstall.sh
+exec ~/.tmp/ztme-toolbox.sh --uninstall "$@"' > ~/.local/bin/wuo-uninstall.sh
 chmod +x ~/.local/bin/wuo-uninstall.sh
 
 echo '#!/usr/bin/bash
-exec ~/bin/ztme-toolbox.sh --run-wuo "$@"' > ~/.local/bin/wuo.sh
+exec ~/.tmp/ztme-toolbox.sh --run-wuo "$@"' > ~/.local/bin/wuo.sh
 chmod +x ~/.local/bin/wuo.sh
 [ -e "$HOME/.local/bin/wuo" ] || ln -sf ~/.local/bin/wuo.sh ~/.local/bin/wuo &>/dev/null;
-cp -f ~/.basher/cellar/bin/weapon-url-opener.sh ~/bin/ztme-toolbox.sh 2>/dev/null;
+cp -f ~/.basher/cellar/bin/weapon-url-opener.sh ~/.tmp/ztme-toolbox.sh 2>/dev/null;
 
 cp -f "$0" ${PREFIX:-/usr/local}/bin/weapon-url-opener 2>/dev/null; chmod +x ${PREFIX:-/usr/local}/bin/weapon-url-opener 2>/dev/null;
 
@@ -182,8 +184,9 @@ while [[ $# -gt 0 ]]; do
             echo "Cleaning symlink."
             rm -f ~/.local/bin/wuo.sh
             rm -f ~/.local/bin/wuo
-            rm -f ~/bin/ztme-toolbox.sh
+            rm -f ~/.tmp/ztme-toolbox.sh
             rm -f ~/.local/bin/wuo-uninstall.sh
+						rm -f ${BIN}/ztme-toolbox
             sleep 0.5
             echo -n "..All done";
             echo -e ""
@@ -262,8 +265,10 @@ else
 						echo -e "\nPlease install the entire package.\n";
 						break
 				 fi
-          	 cp -f "$0" "$HOME/bin/ztme-toolbox.sh";
-						 chmod +x "$HOME/bin/ztme-toolbox.sh"; 
+						echo '#!/data/data/com.termux/files/usr/bin/bash
+ztme-toolbox --add-repo "$@"' > ~/bin/ztme-toolbox.sh
+          	 cp -f "$0" "${BIN}/ztme-toolbox";
+						 chmod +x "${BIN}/ztme-toolbox"; 
 						 wuo
       fi
 fi
