@@ -46,9 +46,9 @@ if [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
 fi
 if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
        user_agent='source'
-       echo -e "User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')"
-    echo -e "\nError: Don't use \`source ${SCRIPT_NAME}' or \`. ${SCRIPT_NAME}'"
-    echo -e "Use \`bash ${SCRIPT_NAME}' or \`${SCRIPT_NAME}'"
+       echo -e "User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')";
+		echo -e "\nError: Don't use \`source ${SCRIPT_NAME}' or \`. ${SCRIPT_NAME}'";
+		echo -e "Use \`bash ${SCRIPT_NAME}' or \`${SCRIPT_NAME}'"
     return 127 2>/dev/null || exit 127
 fi
 
@@ -110,7 +110,7 @@ wuo() {
 
 # Algoritm: dynamic-condition-response using 'select do' and etc.
 
-while true; do
+
 cat << "EOF"
  _       __                                              __     
 | |     / /__  ____ _____  ____  ____        __  _______/ /     ____  ____  ___  ____  ___  _____
@@ -171,7 +171,7 @@ IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs
       break
     fi
   done
-done
+
 }
 
 while [[ $# -gt 0 ]]; do
@@ -185,8 +185,8 @@ while [[ $# -gt 0 ]]; do
             rm -v ~/.local/bin/wuo.sh
             rm -v ~/.local/bin/wuo
             rm -v ~/.tmp/ztme-toolbox.sh
-            rm -v ~/.local/bin/wuo-uninstall.sh
-						rm -v ${BIN}/ztme-toolbox
+            rm -v ~/.local/bin/wuo-uninstall.sh;
+	    rm -v ${BIN}/ztme-toolbox
             rm -v ~/bin/ztme-toolbox.sh
             sleep 0.5
             echo -n "..All done";
@@ -263,16 +263,17 @@ else
       
       if [[ "$enableIt" == "Y" ]] || [[ "$enableIt" == "y" ]]; then
          if [[ "$user_agent" == "curl" ]]; then
-						echo -e "\nPlease install the entire package.\n";
-						break
-				 fi
-						echo '#!/data/data/com.termux/files/usr/bin/bash
+		echo -e "\nPlease install the entire package.\n";
+		break
+	 fi
+echo '#!/data/data/com.termux/files/usr/bin/bash
 ztme-toolbox --add-repo "$@"' > ~/bin/ztme-toolbox.sh
-          	 cp -f "$0" "${BIN}/ztme-toolbox";
-						 chmod +x "${BIN}/ztme-toolbox"; 
-             cp -f "${BIN}/ztme-toolbox" "${HOME}/.tmp/ztme-toolbox.sh" 2>/dev/null;
-             chmod +x ${HOME}/.tmp/ztme-toolbox.sh 2>/dev/null;
-						 wuo
+          	 
+		cp -f "$0" "${BIN}/ztme-toolbox";
+		chmod +x "${BIN}/ztme-toolbox";
+		cp -f "${BIN}/ztme-toolbox" "${HOME}/.tmp/ztme-toolbox.sh" 2>/dev/null;
+		chmod +x ${HOME}/.tmp/ztme-toolbox.sh 2>/dev/null;
+		wuo
       fi
 fi
     echo
