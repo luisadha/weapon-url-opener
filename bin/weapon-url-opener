@@ -51,7 +51,7 @@ if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
 		echo -e "Use \`bash ${SCRIPT_NAME}' or \`${SCRIPT_NAME}'"
     return 127 2>/dev/null || exit 127
 fi
-
+mkdir -p ~/bin
 touch ~/bin/termux-url-opener 2>/dev/null;
 SELFMD5="$(md5sum ~/bin/ztme-toolbox.sh 2>/dev/null | cut -d' ' -f1)"
 TARGETMD5="$(md5sum "$HOME/bin/termux-url-opener" | cut -d' ' -f1)"
