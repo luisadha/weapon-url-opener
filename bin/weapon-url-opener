@@ -155,15 +155,16 @@ IFS=$'\n' read -d '' -r -a file_list < <(\ls -Art ~/bin/*.sh)
 IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs -n1 basename)
 
 
-  select weapon in "${file_list[@]}" "BACK"; do
+  select weapon in "${file_list[@]}" "BACK TO ZTME"; do
     {
         diff -sq ~/bin/"$weapon" ~/bin/termux-url-opener > .weapon-url-opener.status 2>/dev/null
     }
     [[ -n "$weapon" ]] || { break; }
- if [[ "$weapon" == "BACK" ]]; then
+ if [[ "$weapon" == "BACK TO ZTME" ]]; then
       #echo "Exiting the program"
       rm -f .weapon-url-opener.status
-      break
+      exec ~/.tmp/ztme-toolbox.sh "$@"
+      # break
     else
       echo "You selected $(basename "$weapon") as primary weapon"
       sleep 1
