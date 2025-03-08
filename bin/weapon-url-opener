@@ -264,6 +264,7 @@ else
       if [[ "$enableIt" == "Y" ]] || [[ "$enableIt" == "y" ]]; then
          if [[ "$user_agent" == "curl" ]]; then
 		echo -e "\nPlease install the entire package.\n";
+	        echo -e "wget luisadha.github.io/weapon-url-opener && bash weapon-url-opener"
 		break
 	 fi
 echo '#!/data/data/com.termux/files/usr/bin/bash
