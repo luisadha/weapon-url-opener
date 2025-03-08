@@ -161,10 +161,10 @@ IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs
     }
     [[ -n "$weapon" ]] || { break; }
  if [[ "$weapon" == "BACK TO ZTME" ]]; then
-      #echo "Exiting the program"
+      #echo "Exiting the program" 
       rm -f .weapon-url-opener.status
       exec ~/.tmp/ztme-toolbox.sh "$@"
-      # break
+      # Change break to exec ~/.tmp/ztme-toolbox to fix the loop
     else
       echo "You selected $(basename "$weapon") as primary weapon"
       sleep 1
