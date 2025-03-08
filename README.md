@@ -43,11 +43,14 @@ basher install luisadha/weapon-url-opener
 curl -L https://raw.githubusercontent.com/luisadha/weapon-url-opener/refs/heads/master/ztme-toolbox.sh -o ~/bin/ztme-toolbox.sh
 ```
 -->
-### Step (2) Running the setup for first time.
+### Step (2) Running the setup for first time. [bash]
 ```sh
 weapon-url-opener
 ```
-
+### Step (2) Running the setup for first time [zsh]
+```
+bash "$(which weapon-url-opener)" --wuo
+```
 ### Step (3) Start a script.
 ```sh
 wuo
