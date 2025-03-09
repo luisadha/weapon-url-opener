@@ -17,7 +17,7 @@
 
 # ============================================================
 # Script Name  :  wuo.sh / weapon-url-opener.sh
-# Version      : 1.4
+# Version      : 1.5
 # Description  : Switch downloader scripts easily and quickly for termux-url-opener purpose.
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
@@ -34,7 +34,7 @@ run_with_curl=false
 SCRIPT_NAME=${BASH_SOURCE[0]##*/}
 BIN="${PREFIX}/bin"
 version_ztme="1.3.5"
-version_wuo="1.4"
+version_wuo="1.5"
 version_both="1.3.5(1.4)"
 banner='[ZTME-TOOLBOX]'
 inst=$(for cmd in ztme-toolbox weapon-url-opener; do which "$cmd" 2>/dev/null; done)  
@@ -164,15 +164,15 @@ IFS=$'\n' read -d '' -r -a file_list < <(\ls -Art ~/bin/*.sh)
 IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs -n1 basename)
 
 
-  select weapon in "${file_list[@]}" "BACK TO ZTME"; do
+  select weapon in "${file_list[@]}" "EXIT"; do
     {
         diff -sq ~/bin/"$weapon" ~/bin/termux-url-opener > .weapon-url-opener.status 2>/dev/null
     }
     [[ -n "$weapon" ]] || { break; }
- if [[ "$weapon" == "BACK TO ZTME" ]]; then
+ if [[ "$weapon" == "EXIT" ]]; then
       #echo "Exiting the program" 
       rm -f .weapon-url-opener.status
-      kill -9 $$
+      kill -9 $$ &>/dev/null;
       # Change break to exec ~/.tmp/ztme-toolbox to fix the loop
     else
       echo "You selected $(basename "$weapon") as primary weapon"
