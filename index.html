@@ -25,6 +25,8 @@
 # GitHub       : https://github.com/luisadha/weapon-url-opener
 # ============================================================
 #set -xv
+# Jangan tambahkan kode di area ini selain komentar
+	
 user_agent=$_
 run_with_curl=false
 SCRIPT_NAME=${BASH_SOURCE[0]##*/}
@@ -33,18 +35,14 @@ version_ztme="1.3.5"
 version_wuo="1.4"
 version_both="1.3.5(1.4)"
 banner='[ZTME-TOOLBOX]'
-inst='No'
+inst=$(which ztme-toolbox 2>/dev/null || echo "Not Installed")
 warn='[warning]'
 fail='[failure]'
 succ='[success]'
 a_href="https://github.com/luisadha/weapon-url-opener/blob/master/README.md"
 PS3="Your choice: "
 
-if inst=$(command -v ztme-toolbox); then
-    : # do nothing, inst sudah terisi
-else
-    inst="Not Installed"
-fi
+# Jangan tambahkan kode di area ini
 	
 if [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
         #echo "Skrip dijalankan via source <(curl ...)"
