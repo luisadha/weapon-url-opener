@@ -79,7 +79,7 @@ exec ~/.tmp/ztme-toolbox.sh --uninstall "$@"' > ~/.local/bin/wuo-uninstall.sh
 chmod +x ~/.local/bin/wuo-uninstall.sh
 
 echo '#!/usr/bin/bash
-exec ~/.tmp/ztme-toolbox.sh --run-wuo "$@"' > ~/.local/bin/wuo.sh
+~/.tmp/ztme-toolbox.sh --run-wuo "$@"' > ~/.local/bin/wuo.sh
 chmod +x ~/.local/bin/wuo.sh
 [ -e "$HOME/.local/bin/wuo" ] || ln -sf ~/.local/bin/wuo.sh ~/.local/bin/wuo &>/dev/null;
 cp -f ~/.basher/cellar/bin/weapon-url-opener.sh ~/.tmp/ztme-toolbox.sh 2>/dev/null;
@@ -172,7 +172,7 @@ IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs
  if [[ "$weapon" == "BACK TO ZTME" ]]; then
       #echo "Exiting the program" 
       rm -f .weapon-url-opener.status
-      exec ~/.tmp/ztme-toolbox.sh "$@"
+      kill -9 $$
       # Change break to exec ~/.tmp/ztme-toolbox to fix the loop
     else
       echo "You selected $(basename "$weapon") as primary weapon"
