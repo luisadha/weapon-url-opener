@@ -40,10 +40,10 @@ succ='[success]'
 a_href="https://github.com/luisadha/weapon-url-opener/blob/master/README.md"
 PS3="Your choice: "
 
-if [ -e $(which ztme-toolbox) ]; then
-	inst=$(which ztme-toolbox)
+if inst=$(command -v ztme-toolbox); then
+    : # do nothing, inst sudah terisi
 else
-	inst="Not Installed"
+    inst="Not Installed"
 fi
 	
 if [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
