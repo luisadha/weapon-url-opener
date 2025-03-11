@@ -211,7 +211,8 @@ while [[ $# -gt 0 ]]; do
             shift 2
             ;;
         -h|--help)
-            echo "Help messages"
+            echo "Open browser..."
+	    xdg-open $(echo 1 | ztme-toolbox | grep -oP  'https:\/\/\S+')
             exit 0
             ;;
         *)
@@ -241,7 +242,7 @@ echo -e "Info : $a_href
 Author: <adharudin14@gmail.com>"
 printf %"$(tput cols)"s | tr " " "-"
 
-select filename in Exit "${files}" "Add repository (weapon-url-opener status)" "Fix issue if any";
+select filename in Exit "Add repository (weapon-url-opener status)" "Fix issue if any" "${files}";
 do
 [[ -n $filename ]] || { echo "$warn :What's that? Please try again." >&2; continue; }
 
