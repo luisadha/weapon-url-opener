@@ -242,7 +242,7 @@ echo -e "Info : $a_href
 Author: <adharudin14@gmail.com>"
 printf %"$(tput cols)"s | tr " " "-"
 
-select filename in Exit "Add repository (weapon-url-opener status)" "Fix issue if any" "${files}";
+select filename in Exit "Add repository (weapon-url-opener status)" "Fix issue if any" ${files};
 do
 [[ -n $filename ]] || { echo "$warn :What's that? Please try again." >&2; continue; }
 
