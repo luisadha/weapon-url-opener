@@ -44,7 +44,7 @@ fail='[failure]'
 succ='[success]'
 a_href="https://github.com/luisadha/weapon-url-opener/blob/master/README.md"
 PS3="Your choice: "
-
+unlock="Unlock for full experiences with"
 # Jangan tambahkan kode di area ini
 	
 if [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
@@ -275,7 +275,8 @@ else
       
       if [[ "$enableIt" == "Y" ]] || [[ "$enableIt" == "y" ]]; then
          if [[ "$user_agent" == "curl" ]]; then
-		echo -e "\nPlease install the entire package.\n";
+		#echo -e "\nPlease install the entire package.\n";
+	         echo -e "\n${unlock}:\n";
 	        echo -e "wget luisadha.github.io/weapon-url-opener && bash weapon-url-opener"
 		break
 	 fi
