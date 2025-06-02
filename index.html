@@ -158,9 +158,7 @@ for file in ~/bin/*.sh; do
  done
 echo
 
-#file_list=($(ls -Art ~/bin/*.sh))
-#file_list=( $(for file in "${file_list[@]}"; do basename "$file"; done) )
-
+	
 IFS=$'\n' read -d '' -r -a file_list < <(\ls -Art ~/bin/*.sh)
 IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs -n1 basename)
 
