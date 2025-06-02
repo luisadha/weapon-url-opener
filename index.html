@@ -7,7 +7,7 @@
 # in the calling context.
 # ============================================================
 # Script Name  : ztme-toolbox.sh (Zero Tolerance for Major Errors)
-# Version      : 1.3.5
+# Version      : 1.4.1
 # Description  : Interactive Manager Collection Script for bash
 # Author       : Luis Adha (luisadha.my.id)
 # Created Date : 2025-Feb-05 (Wedn)
@@ -33,11 +33,12 @@ run_with_curl=false
 		
 SCRIPT_NAME=${BASH_SOURCE[0]##*/}
 BIN="${PREFIX}/bin"
-version_ztme="1.3.6"
+description="This tool manages local repository directories, displays the main executable of each repository, and integrates as a plugin for Termux-Url-Opener."
+version_ztme="1.4.1"
 version_wuo="1.5"
-version_both="1.3.6(1.5)"
+version_both="1.4.1(1.5)"
 banner='[ZTME-TOOLBOX]'
-inst=$(for cmd in ztme-toolbox weapon-url-opener; do which "$cmd" 2>/dev/null; done | xargs -n1 realpath | xargs | sed 's/\ /\ \&\ /g' )
+inst=$(for cmd in ztme-toolbox weapon-url-opener; do which "$cmd" 2>/dev/null; done | xargs -n1 dirname | xargs | sed 's/\ /\ \&\ /g' )
 inst=${inst:-"Not Installed"}
 warn='[warning]'
 fail='[failure]'
@@ -232,17 +233,18 @@ echo "Preparing..." && findMatch &>/dev/null
 sleep 0.8 && clear
 printf %"$(tput cols)"s | tr " " "-"
 #echo "-------------------------------------------"
-echo "ZTME-Toolbox x Weapon Url Opener v$version_both"
-echo "Run script as interactively from repository.  "
+echo "ZTME-Toolbox (+include Weapon Url Opener script)"
+echo "This tool manages local repository directories, displays the main executable of each repository, and integrates as a plugin for Termux-Url-Opener."
 #echo "-------------------------------------------"
 printf %"$(tput cols)"s | tr " " "-"
+echo -e "Version: v$version_both"
 echo -e "User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')"
 echo -e "Installed on system: $inst"
 echo -e "Info : $a_href
 Author: <adharudin14@gmail.com>"
 printf %"$(tput cols)"s | tr " " "-"
 
-select filename in Exit "Add repository (weapon-url-opener status)" "Fix issue if any" ${files};
+select filename in Exit "Add repository and termux-url-opener plugin" "Fix issue if any" ${files};
 do
 [[ -n $filename ]] || { echo "$warn :What's that? Please try again." >&2; continue; }
 
@@ -261,7 +263,7 @@ do
      # sleep 0.5
       echo -n "...Done!"
       ;;
-    "Add repository (weapon-url-opener status)")
+   "Add repository and termux-url-opener plugin")
  
 if [[ "$plugin_enabled" == "true" ]]; then
     echo "Info: Feature have been applied with termux-url-opener, try sharing the repository URL you want to clone via the Android Shared.";
