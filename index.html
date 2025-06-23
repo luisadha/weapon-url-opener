@@ -204,7 +204,11 @@ while [[ $# -gt 0 ]]; do
             echo -e "Procced full erases with \`basher uninstall luisadha/weapon-url-opener'\n"
             echo -e ""
             exit 0
-            ;;            
+            ;;
+	--wuo-nightly)
+	bash -c '. <(curl -L luisadha.github.io/weapon-url-opener-nightly)
+	shift
+	    ;;
         --wuo|--run-wuo)
             wuo "$1"
             shift 2
