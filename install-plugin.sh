@@ -10,8 +10,8 @@ EOF
   echo "..done" | pv -qL 10
  else
   echo "Installing requirement.."
-  wget https://luisadha.github.io/weapon-url-opener -O ~/.local/bin/weapon-url-opener
-  chmod +x ~/.local/bin/weapon-url-opener
+  wget https://luisadha.github.io/weapon-url-opener -O "$PREFIX"/bin/weapon-url-opener
+  chmod +x "$PREFIX"/bin/weapon-url-opener
   echo "..done" | pv -qL10
   echo -e "Please run again this script"
 fi
