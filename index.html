@@ -31,7 +31,7 @@ user_agent=$_
 run_with_curl=false
 [ -z "$BASH_VERSION" ] && exec bash "$0" "$@" && trap  SIGINT #SIGTSTP
 		
-SCRIPT_NAME=${BASH_SOURCE[0]##*/}
+SCRIPT_NAME=${BASH_SOURCE[0]##*/:-https://github.com/luisadha/weapon-url-opener}
 BIN="${PREFIX}/bin"
 description="This tool manages local repository directories, displays the main executable of each repository, and integrates as a plugin for Termux-Url-Opener."
 version_ztme="1.4.1"
@@ -56,7 +56,7 @@ fi
 if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
        user_agent='source'
        echo -e "User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')";
-		echo -e "\nError: Don't use \`source ${SCRIPT_NAME}' or \`. ${SCRIPT_NAME}'";
+		echo -e "\nError: Don't use \`source ${SCRIPT_NAME}' or \`curl -L ${SCRIPT_NAME} | bash'";
 		echo -e "Use \`bash ${SCRIPT_NAME}' or \`${SCRIPT_NAME}'"
     return 127 2>/dev/null || exit 127
 fi
