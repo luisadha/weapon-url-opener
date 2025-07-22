@@ -63,7 +63,7 @@ if [[ "${run_with_curl}" != "true" ]]; then
     return 127 2>/dev/null || exit 127
 fi
 		
-if [[ ${BASH_SOURCE[0]} != "$0" ]]; then
+if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
        user_agent='source'
        echo -e "User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')";
 		echo -e "\nError: Don't use \`source ${SCRIPT_NAME:-$APP}' ";
