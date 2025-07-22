@@ -57,7 +57,7 @@ fi
 		
 if [[ "${run_with_curl}" != "true" ]]; then
 	user_agent='pipe'
-	echo "User Agent: ${user_agent}"	
+	echo -e "User Agent: ${user_agent}\n"	
 	echo -e "\nError: Don't use \`curl -L ${SCRIPT_NAME:-$APPNAME} | bash'";
 	echo -e "Use \`bash ${SCRIPT_NAME:-$APP}' or \`${SCRIPT_NAME:-$APP}'";
     return 127 2>/dev/null || exit 127
