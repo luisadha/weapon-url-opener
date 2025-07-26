@@ -64,7 +64,8 @@ cat <<'EOF'
 
 However, you are still running it via:
     `. <(curl -L https://luisadha.github.io/weapon-url-opener)'
-EOF	return 127 2>/dev/null || exit 127
+EOF
+return 127 2>/dev/null || exit 127
 fi
 		
 if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
