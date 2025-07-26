@@ -125,7 +125,7 @@ findMatch() {
 findMatchRecursif() {
   find . -type d -exec sh -c 'for d; do [ -f "$d/${d##*/}.sh" ] && basename "$d/${d##*/}.sh" ".sh"; done' _ {} +
 }
-wuo() {
+wuof() {
 #!/data/data/com.termux/files/usr/bin/bash
 # weapon-url-opener v1.0
 # Created March 2024
@@ -175,7 +175,8 @@ echo
 IFS=$'\n' read -d '' -r -a file_list < <(\ls -Art ~/bin/*.sh)
 IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs -n1 basename)
 
-
+[ -t 0 ] || { echo "[warn] No TTY. You are not in an interactive terminal." >&2; exit 123; }
+	
   select weapon in "${file_list[@]}" "EXIT"; do
     {
         diff -sq ~/bin/"$weapon" ~/bin/termux-url-opener > .weapon-url-opener.status 2>/dev/null
@@ -223,7 +224,7 @@ while [[ $# -gt 0 ]]; do
 	shift
 	    ;;
         --wuo|--run-wuo)
-            wuo "$1"
+            wuof "$1"
             shift 2
             ;;
         -h|--help)
