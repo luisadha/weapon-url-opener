@@ -57,10 +57,12 @@ fi
 		
 if [[ "${run_with_curl}" != "true" ]]; then
 	user_agent='pipe'
-	echo -e "User Agent: ${user_agent}\n"	
-	echo -e "\nError: Don't use \`curl -L ${SCRIPT_NAME:-$APPNAME} | bash'";
-	echo -e "Use \`bash ${SCRIPT_NAME:-$APP}' or \`${SCRIPT_NAME:-$APP}'";
-    return 127 2>/dev/null || exit 127
+	echo -e "User Agent: ${user_agent}\n"
+	cat <<'EOF'
+		[warning] Script was deprecreated, please install nightly version with `nene -S wuoy'
+		but you still run witn `. <(curl https://luisadha.github.io/weapon-url-opener)'
+EOF
+	return 127 2>/dev/null || exit 127
 fi
 		
 if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
