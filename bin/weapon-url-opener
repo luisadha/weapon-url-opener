@@ -59,11 +59,9 @@ if [[ "${run_with_curl}" != "true" ]]; then
 	user_agent='pipe'
 	echo -e "User Agent: ${user_agent}\n"
 cat <<'EOF'
-[warning] This script has been deprecated. Please install the nightly version using:
-    `nene -S wuoy'
+[warning] This script has been deprecated. Please install the nightly version using: `nene -S wuoy' for more info at https://github.com/luisadha/nene#install
 
-However, you are still running it via:
-    `. <(curl -L https://luisadha.github.io/weapon-url-opener)'
+However, you are still running it via: `. <(curl -L https://luisadha.github.io/weapon-url-opener)'
 EOF
 return 127 2>/dev/null || exit 127
 fi
