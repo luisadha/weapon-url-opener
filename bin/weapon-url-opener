@@ -45,7 +45,7 @@ warn='[warning]'
 fail='[failure]'
 succ='[success]'
 a_href="https://github.com/luisadha/weapon-url-opener/blob/master/README.md"
-PS3="Your choice: "
+
 unlock="Unlock for full experiences with"
 # Jangan tambahkan kode di area ini
 	
@@ -125,7 +125,7 @@ findMatch() {
 findMatchRecursif() {
   find . -type d -exec sh -c 'for d; do [ -f "$d/${d##*/}.sh" ] && basename "$d/${d##*/}.sh" ".sh"; done' _ {} +
 }
-wuof() {
+wuo_safe() {
 #!/data/data/com.termux/files/usr/bin/bash
 # weapon-url-opener v1.0
 # Created March 2024
@@ -152,7 +152,9 @@ echo -e  " ╚══════════════════════
 echo -e " Version: v$version_wuo"
 echo -e " Tips: Use CTRL + D or CTRL + Z to force exit!\n"
 #test -f ~/bin/termux-url-opener 
+  
 
+local prompt="$1"; shift	
 ref_hash=$(md5sum ~/bin/termux-url-opener | awk '{print $1}'); match="";
 for file in ~/bin/*.sh; do
     file_hash=$(md5sum "$file" | awk '{print $1}')
@@ -171,11 +173,15 @@ for file in ~/bin/*.sh; do
  done
 echo
 
-	
+PS3="Your choice: "
+
 IFS=$'\n' read -d '' -r -a file_list < <(\ls -Art ~/bin/*.sh)
 IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs -n1 basename)
 
-[ -t 0 ] || { echo "[warn] No TTY. You are not in an interactive terminal." >&2; exit 123; }
+if [ ! -t 0 ]; then
+    echo "[error] This script requires an interactive terminal (tty)." >&2
+    return 1
+fi
 	
   select weapon in "${file_list[@]}" "EXIT"; do
     {
@@ -224,7 +230,7 @@ while [[ $# -gt 0 ]]; do
 	shift
 	    ;;
         --wuo|--run-wuo)
-            wuof "$1"
+            wuo_safe "$1"
             shift 2
             ;;
         -h|--help)
