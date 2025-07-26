@@ -74,10 +74,7 @@ if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
     return 127 2>/dev/null || exit 127
 fi
 	
-if [ ! -t 0 ]; then
-  echo "[error] This script requires an interactive terminal (tty)."
-  exit 1
-fi
+
 	
 mkdir -p ~/bin
 touch ~/bin/termux-url-opener 2>/dev/null;
@@ -235,6 +232,10 @@ while [[ $# -gt 0 ]]; do
 	shift
 	    ;;
         --wuo|--run-wuo)
+		if [ ! -t 0 ]; then
+  echo "[error] This script requires an interactive terminal (tty)."
+  exit 1
+fi
             wuo_safe "$1"
             shift 2
             ;;
@@ -270,7 +271,10 @@ echo -e "Installed on system: $inst"
 echo -e "Info : $a_href
 Author: <adharudin14@gmail.com>"
 printf %"$(tput cols)"s | tr " " "-"
-
+if [ ! -t 0 ]; then
+  echo "[error] This script requires an interactive terminal (tty)."
+  exit 1
+fi
 select filename in Exit "Add repository and termux-url-opener plugin" "Fix issue if any" ${files};
 do
 [[ -n $filename ]] || { echo "$warn :What's that? Please try again." >&2; continue; }
