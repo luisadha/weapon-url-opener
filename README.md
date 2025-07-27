@@ -4,7 +4,7 @@
 
 #dynamic-condition-response #bashproject
 
-# Decription 
+#Description 
 Switch downloader scripts easily and quickly. Now you can use the termux-url-opener feature more often.
 
 # Features
