@@ -298,7 +298,7 @@ else
    echo -e "Do you want apply this feature into Termux-URL-Opener? (Y) \n";
   [[ "$run_with_curl" == "true" ]] && echo -e "Warning: You cannot use this feature(y) until you have installed it completely. You can ignore this warning, (n) Continue as is \n" 
 
-   read -r -p "Confirm (Y/n): " enableIt
+   read -r -p "Confirm (Y/n): " enableIt < /dev/tty;
       
       if [[ "$enableIt" == "Y" ]] || [[ "$enableIt" == "y" ]]; then
          if [[ "$user_agent" == "curl" ]]; then
@@ -320,7 +320,7 @@ fi
     echo
     echo "You selected $filename ($REPLY)"
       echo "$banner : Paste your repository link below :"
-      read -r REPO_LINK
+      read -r REPO_LINK < /dev/tty;
       clonePackage "$REPO_LINK"
       break
       ;;
@@ -331,7 +331,7 @@ fi
       # termux-fix-shebang ${filename}/${filename,,}.sh
       ./"${filename}"/"${filename,,}".sh
     echo
-     read -t 0.1
+     read -t 0.1 < /dev/tty;
      continue
      ;;
   esac
