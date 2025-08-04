@@ -47,28 +47,15 @@ a_href="https://github.com/luisadha/weapon-url-opener/blob/master/README.md"
 unlock="Unlock for full experiences with"
 # Jangan tambahkan kode di area ini
 	
+#!/usr/bin/env bash
 
-if [[ ${BASH_SOURCE[0]} != "$0" ]]; then
-  # Dipanggil via source
-  if [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
-    	run_with_curl=true
-	user_agent='curl'
-    echo -e "User Agent: $user_agent"
-    echo -e "Warning: Skrip dijalankan via source <(curl ...)"
-  else
-    user_agent='source'
-    echo -e "User Agent: $user_agent"
-    echo -e "Error: Jangan source skrip ini langsung"
-    return 127 2>/dev/null || exit 127
-  fi
-elif [[ ! -t 0 ]]; then
-  user_agent='pipe'
-  echo -e "User Agent: $user_agent"
-else
-  user_agent='tty'
-  echo -e "User Agent: $user_agent"
+if [[ ! -t 0 && "${BASH_SOURCE[0]}" == "$0" ]]; then
+    echo "🧪 Terdeteksi: dijalankan via pipe (| bash)"
+elif [[ -t 0 && "${BASH_SOURCE[0]}" == "$0" ]]; then
+    echo "🧑 Interaktif: dijalankan langsung (bash script.sh)"
+elif [[ "${BASH_SOURCE[0]}" != "$0" ]]; then
+    echo "📦 Terdeteksi: dijalankan via source"
 fi
-
 
 	
 
