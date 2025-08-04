@@ -47,33 +47,33 @@ a_href="https://github.com/luisadha/weapon-url-opener/blob/master/README.md"
 unlock="Unlock for full experiences with"
 # Jangan tambahkan kode di area ini
 	
-if [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
-        #echo "Skrip dijalankan via source <(curl ...)"
-        run_with_curl=true
-        user_agent='curl'
-	echo "${_}"
+
+if [[ ${BASH_SOURCE[0]} != "$0" ]]; then
+  # Dipanggil via source
+  if [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
+    	run_with_curl=true
+	user_agent='curl'
+    echo -e "User Agent: $user_agent"
+    echo -e "Warning: Skrip dijalankan via source <(curl ...)"
+  else
+    user_agent='source'
+    echo -e "User Agent: $user_agent"
+    echo -e "Error: Jangan source skrip ini langsung"
+    return 127 2>/dev/null || exit 127
+  fi
+elif [[ ! -t 0 ]]; then
+  user_agent='pipe'
+  echo -e "User Agent: $user_agent"
+else
+  user_agent='tty'
+  echo -e "User Agent: $user_agent"
 fi
 
-if [[ "${BASH_SOURCE[0]}" != "$0" && -n "${BASH_SOURCE[1]}" && -t 0 ]]; then	
+
+	
+
 		
-	user_agent='pipe'
-	echo "${_}"
-	echo -e "User Agent: ${user_agent}\n"
-	echo -e "Don\'t use curl -L ... | bash "
-#	echo -e "[warning] This script has been deprecated. Please install the nightly version using: nene -Si weapon-url-opener-nightly for more info at https://github.com/luisadha/nene#install ";
-#	echo -e 'However, you are still running it via: . <(curl -L https://luisadha.github.io/weapon-url-opener)'
-#
-	return 127 2>/dev/null || exit 127
-	fi
-		
-if [[ ${BASH_SOURCE[0]} != "$0" && "${run_with_curl}" != "true" ]]; then
-       echo "${_}"
-	user_agent='source'
-       echo -e "User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')";
-		echo -e "\nError: Don't use \`source ${SCRIPT_NAME:-$APP}' ";
-		echo -e "Use \`bash ${SCRIPT_NAME:-$APP}' or \`${SCRIPT_NAME:-$APP}'"
-    return 127 2>/dev/null || exit 127
-fi
+
 	
 
 	
