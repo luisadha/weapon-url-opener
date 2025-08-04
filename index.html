@@ -55,7 +55,7 @@ if [[ ! -t 0 ]]; then
 elif [[ -t 0 && "${BASH_SOURCE[0]}" == "$0" ]]; then
     echo "🧑 Interaktif: dijalankan langsung (bash script.sh)"
 	exit 3
-elif [[ -z "${BASH_SOURCE[0]}" ]]; then
+elif [[ -n "${BASH_SOURCE[0]}" ]]; then
     echo "📦 Terdeteksi: dijalankan via source"
 	exit 4
 fi
