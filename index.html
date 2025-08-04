@@ -54,10 +54,13 @@ if [[ ! -t 0 ]]; then
 	exit 2
 elif [[ -t 0 && "${BASH_SOURCE[0]}" == "$0" ]]; then
     echo "🧑 Interaktif: dijalankan langsung (bash script.sh)"
-	exit 3
-elif [[ -n "${BASH_SOURCE[0]}" ]]; then
-    echo "📦 Terdeteksi: dijalankan via source"
+	:
+elif [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
+	echo "Terdeteksi: dijalankam via subtitusi"
 	exit 4
+elif [[ -n "${BASH_SOURCE[0]}" ]]; then
+    	echo "📦 Terdeteksi: dijalankan via source"
+	exit 5
 fi
 
 	
