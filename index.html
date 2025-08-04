@@ -53,8 +53,9 @@ if [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then
         user_agent='curl'
 	echo "${_}"
 fi
+
+if [[ "${BASH_SOURCE[0]}" != "$0" && -n "${BASH_SOURCE[1]}" && -t 0 ]]; then	
 		
-	if [[ -t 0 ]]; then
 	user_agent='pipe'
 	echo "${_}"
 	echo -e "User Agent: ${user_agent}\n"
