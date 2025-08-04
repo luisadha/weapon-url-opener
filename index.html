@@ -49,13 +49,13 @@ unlock="Unlock for full experiences with"
 	
 #!/usr/bin/env bash
 
-if [[ ! -t 0 && "${BASH_SOURCE[0]}" == "$0" ]]; then
+if [[ ! -t 0 ]]; then
     echo "🧪 Terdeteksi: dijalankan via pipe (| bash)"
 	exit 2
 elif [[ -t 0 && "${BASH_SOURCE[0]}" == "$0" ]]; then
     echo "🧑 Interaktif: dijalankan langsung (bash script.sh)"
 	exit 3
-elif [[ -n "${BASH_SOURCE[0]}" ]]; then
+elif [[ -z "${BASH_SOURCE[0]}" ]]; then
     echo "📦 Terdeteksi: dijalankan via source"
 	exit 4
 fi
@@ -171,10 +171,7 @@ PS3="Your choice: "
 IFS=$'\n' read -d '' -r -a file_list < <(ls -Art ~/bin/*.sh)
 IFS=$'\n' read -d '' -r -a file_list < <(printf "%s\n" "${file_list[@]}" | xargs -n1 basename)
 
-if [ ! -t 0 ]; then
-    echo "[error] This script requires an interactive terminal (tty)." >&2
-    return 1
-fi
+
 	
   select weapon in "${file_list[@]}" "EXIT"; do
     {
@@ -262,10 +259,7 @@ echo -e "Installed on system: $inst"
 echo -e "Info : $a_href
 Author: <adharudin14@gmail.com>"
 printf %"$(tput cols)"s | tr " " "-"
-if [ ! -t 0 ]; then
-  echo "[error] This script requires an interactive terminal (tty)."
-  exit 1
-fi
+
 select filename in Exit "Add repository and termux-url-opener plugin" "Fix issue if any" ${files};
 do
 [[ -n $filename ]] || { echo "$warn :What's that? Please try again." >&2; continue; }
