@@ -51,10 +51,13 @@ unlock="Unlock for full experiences with"
 
 if [[ ! -t 0 && "${BASH_SOURCE[0]}" == "$0" ]]; then
     echo "🧪 Terdeteksi: dijalankan via pipe (| bash)"
+	exit 2
 elif [[ -t 0 && "${BASH_SOURCE[0]}" == "$0" ]]; then
     echo "🧑 Interaktif: dijalankan langsung (bash script.sh)"
+	exit 3
 elif [[ "${BASH_SOURCE[0]}" != "$0" ]]; then
     echo "📦 Terdeteksi: dijalankan via source"
+	exit 4
 fi
 
 	
