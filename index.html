@@ -314,7 +314,7 @@ ztme-toolbox --add-repo "$@"' > ~/bin/ztme-toolbox.sh
 		chmod +x "${BIN}/ztme-toolbox";
 		cp -f "${BIN}/ztme-toolbox" "${HOME}/.tmp/ztme-toolbox.sh" 2>/dev/null;
 		chmod +x "${HOME}"/.tmp/ztme-toolbox.sh 2>/dev/null;
-		wuo "$1"
+		wuo_safe "$1"
       fi
 fi
     echo
