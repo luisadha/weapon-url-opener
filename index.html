@@ -24,8 +24,7 @@
 # Jangan tambahkan kode di area ini selain komentar
 	
 user_agent=$_
-set -xv
-echo $_
+
 run_with_curl=false
 [ -z "$BASH_VERSION" ] && exec bash "$0" "$@" && trap  SIGINT #SIGTSTP
 APPNAME="https://luisadha.github.io/weapon-url-opener"
