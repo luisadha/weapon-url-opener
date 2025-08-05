@@ -51,30 +51,32 @@ unlock="Unlock for full experiences with"
 if [[ ! -t 0 ]]; then user_agent='pipe'
 echo -e "User Agent: ${user_agent}"
 cat <<"EOF"
-	Don\'t use curl -L ... | bash 
-	[warning] This way has been deprecated. Please use bash weapon-url-opener instead
+Don't use curl -L ... | bash 
+[warning] This way has been deprecated. Please use `bash weapon-url-opener' instead.
 EOF
 
    # echo "🧪 Terdeteksi: dijalankan via pipe (| bash)"
 	exit 2
 elif [[ -t 0 && "${BASH_SOURCE[0]}" == "$0" ]]; then user_agent="${0}"
 
-    echo -e "User Agent: $user_agent"
+echo -e "User Agent: $user_agent"
 #	echo "🧑 Interaktif: dijalankan langsung (bash script.sh)"
 	:
 elif [[ -e /proc/self/fd/63 && $(readlink /proc/self/fd/63) == pipe:* ]]; then user_agent='curl'
-    echo -e "User Agent: $user_agent"
+echo -e "User Agent: $user_agent"
 cat <<"EOF"
-	Warning: Skrip dijalankan via source <(curl ...) / Subtitusi
+Don't use source <(curl -L ...)
+[warning] This way has been deprecated. Please use `bash weapon-url-opener' instead.
+EOF
 EOF
 
 #echo "Terdeteksi: dijalankam via subtitusi"
 	exit 4
 elif [[ -n "${BASH_SOURCE[0]}" ]]; then user_agent='source'
-cat <<EOF
-    User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')
-    Error: Don't use \`source ${SCRIPT_NAME:-$APP}' "
-	Use \`bash ${SCRIPT_NAME:-$APP}' or \`${SCRIPT_NAME:-$APP}' instead
+echo -e "User Agent: $(echo "$user_agent" | awk -F/ '{print $NF}')"
+cat <<"EOF"
+Error: Don't use ` source ${SCRIPT_NAME:-$APP} ' 
+Use ` bash ${SCRIPT_NAME:-$APP} ' or ` ${SCRIPT_NAME:-$APP} ' instead
 EOF
     	#echo "📦 Terdeteksi: dijalankan via source"
 	exit 5
