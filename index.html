@@ -103,20 +103,19 @@ else
 fi
 mkdir -p ~/.tmp
 
-echo '#!/usr/bin/bash
-exec ~/.tmp/ztme-toolbox.sh --uninstall "$@"' > ~/.local/bin/wuo-uninstall.sh
-chmod +x ~/.local/bin/wuo-uninstall.sh
+#echo '#!/usr/bin/bash
+#exec ~/.tmp/ztme-toolbox.sh --uninstall "$@"' > ~/.local/bin/wuo-uninstall.sh
+#chmod +x ~/.local/bin/wuo-uninstall.sh
 
 echo '#!/usr/bin/bash
-~/.tmp/ztme-toolbox.sh --run-wuo "$@"' > ~/.local/bin/wuo.sh
-chmod +x ~/.local/bin/wuo.sh
-[ -e "$HOME/.local/bin/wuo" ] || ln -sf ~/.local/bin/wuo.sh ~/.local/bin/wuo &>/dev/null;
-cp -f ~/.basher/cellar/bin/weapon-url-opener.sh ~/.tmp/ztme-toolbox.sh 2>/dev/null;
-
+~/.tmp/ztme-toolbox.sh --run-wuo "$@"' > ~/.local/bin/wuo
+chmod +x ~/.local/bin/wuo
+#[ -e "$HOME/.local/bin/wuo" ] || ln -sf ~/.local/bin/wuo.sh ~/.local/bin/wuo &>/dev/null;
+#cp -f ~/.basher/cellar/bin/weapon-url-opener.sh ~/.tmp/ztme-toolbox.sh 2>/dev/null;
 #cp -f "$0" ${PREFIX:-/usr/local}/bin/weapon-url-opener 2>/dev/null; chmod +x ${PREFIX:-/usr/local}/bin/weapon-url-opener 2>/dev/null;
 
 clonePackage() {
-# local args="$1"
+ local args="$1"
        if timeout 10s ping -c 1 google.com &> /dev/null; then
          if [ -z "${1:-$REPO_LINK}" ]; then
            echo "$warn : Broken link."
@@ -221,22 +220,6 @@ while [[ $# -gt 0 ]]; do
             clonePackage "$2"
             shift 2
             ;;
-        --uninstall)
-            echo "Cleaning symlink."
-            rm -v ~/.local/bin/wuo.sh
-            rm -v ~/.local/bin/wuo
-            rm -v ~/.tmp/ztme-toolbox.sh
-            rm -v ~/.local/bin/wuo-uninstall.sh;
-	    rm -v "${BIN}"/ztme-toolbox
-            rm -v ~/bin/ztme-toolbox.sh
-            sleep 0.5
-            echo -n "..All done";
-            echo -e ""
-            echo -e "You can make symlink again with \`weapon-url-opener' or\n"
-            echo -e "Procced full erases with \`basher uninstall luisadha/weapon-url-opener'\n"
-            echo -e ""
-            exit 0
-            ;;
 	--wuo-nightly)
 	bash -c '. <(curl -L luisadha.github.io/weapon-url-opener-nightly)'
 	shift
@@ -322,11 +305,6 @@ else
 	 fi
 echo '#!/data/data/com.termux/files/usr/bin/bash
 ztme-toolbox --add-repo "$@"' > ~/bin/ztme-toolbox.sh
-          	 
-		cp -f "$0" "${BIN}/ztme-toolbox";
-		chmod +x "${BIN}/ztme-toolbox";
-		cp -f "${BIN}/ztme-toolbox" "${HOME}/.tmp/ztme-toolbox.sh" 2>/dev/null;
-		chmod +x "${HOME}"/.tmp/ztme-toolbox.sh 2>/dev/null;
 		wuo_safe "$1"
       fi
 fi
